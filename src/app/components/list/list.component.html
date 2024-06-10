@@ -1,0 +1,5 @@
+<div class="list">
+    @for (item of itemsSubject(); track $index){
+    <app-list-item [name]="item.name" [id]="item.id" (deleteItem)="deleteItem($event)"></app-list-item>
+}
+</div> 
