@@ -3,20 +3,19 @@ import { IonHeader, IonButton, IonFooter, IonContent } from '@ionic/angular/stan
 import { ListComponent } from "../components/list/list.component";
 import { ITEM_RESOURCE } from '../services/constants/api.constants';
 import { ListItemComponent } from '../components/list-item/list-item.component';
+import { ModalComponent } from '../components/modal/modal.component';
 
 @Component({
     selector: 'app-home',
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
     standalone: true,
-    imports: [IonHeader, IonFooter, IonContent, ListComponent, IonButton, ListItemComponent], 
+    imports: [IonHeader, IonFooter, IonContent, ListComponent, IonButton, ListItemComponent, ModalComponent], 
 })
 export class HomePage {
-  constructor() {
-  }
+  openModal = false
 
-  onDere = ()=>{
-    console.log(ITEM_RESOURCE)
-    console.log("dere")
+  onClickOpenModal = () => {
+    this.openModal = true
   }
 }

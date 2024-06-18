@@ -1,7 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { ItemService } from 'src/app/services/item.service';
 import { Item, ItemId } from 'src/app/types/Item';
 import { ListItemComponent } from '../list-item/list-item.component';
+import { ItemSignalService } from 'src/app/services/item-signal.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -10,20 +12,19 @@ import { ListItemComponent } from '../list-item/list-item.component';
   standalone: true,
   imports: [ListItemComponent],
 })
-export class ListComponent{
-  itemsSubject = signal<Item[]>([]) || undefined;
+export class ListComponent implements OnInit {
+  itemService = inject(ItemService);
 
-  constructor(
-    private readonly itemService: ItemService
-  ) { 
-    this.itemService.getAllItems().subscribe((items) => this.itemsSubject.set(items))
+  ngOnInit() {
+    this.itemService.getAllItems().subscribe();
   }
 
-  deleteItem(itemId: ItemId) {
-    return this.itemService.deleteItem(itemId).subscribe(()=>{
-      this.itemsSubject.update((value) => {
-        return value.filter((i) => i.id !== itemId) 
-      })
-    })
+  get items() {
+    return this.itemService.itemsSubject();
   }
+
+  trackById(index: number, item: Item) {
+    return item.id;
+  }
+
 }
