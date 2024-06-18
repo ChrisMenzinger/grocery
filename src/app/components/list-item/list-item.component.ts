@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
-import { IonButton, IonCheckbox, IonLabel } from '@ionic/angular/standalone';
+import { Component, Input, inject } from '@angular/core';
+import { IonCheckbox, IonLabel } from '@ionic/angular/standalone';
 import { ItemService } from 'src/app/services/item.service';
 import { ItemId } from 'src/app/types/Item';
 

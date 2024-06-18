@@ -1,9 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, inject,Output } from '@angular/core';
+import { Component, EventEmitter, Input, inject,Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonButton, IonInput, IonModal } from '@ionic/angular/standalone';
-import { ItemSignalService } from 'src/app/services/item-signal.service';
 import { ItemService } from 'src/app/services/item.service';
-import { Item, ItemToCreate } from 'src/app/types/Item';
+import { ItemToCreate } from 'src/app/types/Item';
 
 @Component({
   selector: 'app-modal',
