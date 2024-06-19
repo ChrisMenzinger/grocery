@@ -40,6 +40,7 @@
 
 :root {
     --ion-font-family: 'Ubuntu', sans-serif;
+    --ion-text-color: rgb(54,54,54);
     --ion-background-color: rgb(54,54,54);
     --ion-color-primary: rgb(54,54,54);
     --ion-color-secondary: rgb(236,75,39);
@@ -47,3 +48,11 @@
     --ion-color-success: rgb(116,20,70);
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ion-text-color: rgb(54,54,54);
+    }
+    body.dark {
+      --ion-text-color: rgb(54,54,54);
+    }
+  }
