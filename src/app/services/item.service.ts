@@ -16,7 +16,6 @@ export class ItemService extends ItemSignalService<Item> {
   }
   
   createItem(item: ItemToCreate): Observable<Item> {
-    console.log('Sending HTTP request to create item:', item);
     return this.http.post<Item>(ITEM_RESOURCE, item).pipe(
       tap((createdItem: Item) => this.upsertResource(createdItem))
     );;

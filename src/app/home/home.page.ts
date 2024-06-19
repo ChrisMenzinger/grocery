@@ -14,7 +14,7 @@ import { ModalComponent } from '../components/modal/modal.component';
 export class HomePage {
   openModal = false
 
-  onClickOpenModal = () => {
+  onClickOpenModal(){
     this.openModal = true
   }
 }

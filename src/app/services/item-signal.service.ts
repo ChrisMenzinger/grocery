@@ -12,7 +12,6 @@ export class ItemSignalService<T> {
   itemsSubject: WritableSignal<ResourceType<T>[]> = signal<ResourceType<T>[]>([]);
 
   getItemsSignal(): Signal<Item[]> {
-    console.log(this.itemsSubject);
     return this.itemsSubject;
   }
 

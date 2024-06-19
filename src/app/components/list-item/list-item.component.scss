@@ -1,14 +1,13 @@
 ion-checkbox {
     color: var(--ion-color-secondary);
     --border-color-checked: var(--ion-color-secondary);
-    --checkbox-background-checked: var(--ion-color-secondary);
     --checkmark-color: transparent;
     --size: 20px;
     padding: 3px 35px 0 0;
     margin: 0 0 30px 40px;
     flex-shrink: 0;
-
 }
+
 
 ion-checkbox::part(container) {
     border-radius: 6px;

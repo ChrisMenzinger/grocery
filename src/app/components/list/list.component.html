@@ -1,5 +1,5 @@
 <div class="list">
-    @for (item of items; track trackById){
-    <app-list-item [name]="item.name" [id]="item.id"></app-list-item>
+    @for (item of items; track $index){
+    <app-list-item [name]="item.name" [id]="item.id" ></app-list-item>
 }
 </div> 

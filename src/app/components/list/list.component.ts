@@ -22,9 +22,4 @@ export class ListComponent implements OnInit {
   get items() {
     return this.itemService.itemsSubject();
   }
-
-  trackById(index: number, item: Item) {
-    return item.id;
-  }
-
 }
