@@ -1,4 +1,4 @@
-<ion-modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 1]" [isOpen]="isModalOpen">
+<ion-modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 1]" [isOpen]="isModalOpen"  (willDismiss)="onWillDismiss()">
   <ng-template>
     <div class="modal-div">
       <ion-input class="item-input" type="text" label="Enter item" labelPlacement="floating" [(ngModel)]="value.name"></ion-input>

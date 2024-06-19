@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonInput, IonModal } from '@ionic/angular/standalone';
+import { IonButton, IonInput, IonModal, ModalController } from '@ionic/angular/standalone';
 import { ItemService } from 'src/app/services/item.service';
 import { ItemToCreate } from 'src/app/types/Item';
 
@@ -35,5 +35,9 @@ export class ModalComponent {
 
   private resetForm() {
     this.value.name = '';
+  }
+
+  onWillDismiss() {
+    this.setOpen(false);
   }
 }
